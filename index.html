@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script type="text/javascript" src="piloti-mapa.js"></script>
+
+	<script>
+		$(document).ready(function(){
+
+			$("#map").mapa({
+				containerSize: {
+					height: "400px",
+					width: "600px",
+					display: "block"
+				},
+				address: "Av. Venezuela, 131",
+				city: "Rio de Janeiro",
+				region: 'BR',
+				contentString: null
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+	<div id="map" ></div>
+
+
+</body>
+
+</html>
