@@ -1,9 +1,10 @@
 /*
-	Desenvolvido: Equipe Piloti
 	Site: http://www.piloti.com.br
 	Version : 1.1
 	Description: Plugin com integração google maps.
 */
+
+
 (function($) {
   $.fn.mapa = function(settings) {
   	var container;
