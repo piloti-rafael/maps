@@ -21,8 +21,8 @@
 	};
 	//$.extend(config, settings);
 	$.extend(true, config, settings);
-
 	return this.each(function() {
+		console.log("aa");
 
 		$(config.container).css(config.containerSize);
 		var geocoder;
@@ -73,7 +73,6 @@
 				}
 			}
 		});
-
 	});
   };
 })(jQuery);
