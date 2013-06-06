@@ -8,24 +8,44 @@
 	<script>
 		$(document).ready(function(){
 
-			$("#map").mapa({
+			/*$("#vamo").mapa({
 				containerSize: {
 					height: "400px",
 					width: "600px",
 					display: "block"
 				},
-				address: "Av. Venezuela, 131",
+				address: "Av. Venezuela",
+				number : "231",
 				city: "Rio de Janeiro",
 				region: 'BR',
-				contentString: null
+				contentString: null,
+			});*/
+
+			$("#mapa").mapa({
+				container : "#vamo",
+				containerSize: {
+					height: "400px",
+					width: "600px",
+					display: "block"
+				}
 			});
 
+			
 		});
 	</script>
 </head>
 
 <body>
-	<div id="map" ></div>
+
+	<select id="mapa">
+		<option value="">Selecione </option>
+		<option value="Av. Venezuela, 131, Rio de Janeiro, BR" data-description="Piloti Mobile Internet">Piloti</option>
+		<option value="Piazza del Colosseo, 1, 00184 Roma, Itália" data-description="Ola">Coliseu</option>
+		<option value="Rua Gavião Peixoto, 381, Niteroi, BR">Teste</option>
+	</select>
+
+
+	<div id="vamo" ></div>
 
 
 </body>
