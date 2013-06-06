@@ -22,6 +22,8 @@
 		container = this.selector
 	}
 	var config = {
+		icon: null,
+		shadow: null,
 		container: container,
 		containerSize: {
 			height: "400px",
@@ -69,7 +71,9 @@
 
 		marker = new google.maps.Marker({
 			map: map,
-			draggable: false
+			draggable: false,
+			icon : config.icon,
+			shadow : config.shadow
 		});
 
 
