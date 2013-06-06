@@ -45,6 +45,30 @@
 		//crio tamanho para o container 
 		$(config.container).css(config.containerSize);
 
+		var styles = [
+			{
+			  stylers: [
+				{ hue: "#00ffe6" },
+				{ saturation: -20 }
+			  ]
+			},{
+			  featureType: "road",
+			  elementType: "geometry",
+			  stylers: [
+				{ lightness: 100 },
+				{ visibility: "simplified" }
+			  ]
+			},{
+			  featureType: "road",
+			  elementType: "labels",
+			  stylers: [
+				{ visibility: "off" }
+			  ]
+			}
+		  ];
+		  var styledMap = new google.maps.StyledMapType(styles,
+		    {name: "Styled Map"});
+
 		var geocoder;
 		var map;
 		var marker;
@@ -53,11 +77,15 @@
 		var options = {
 			zoom: 5,
 			center: latlng,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
+			mapTypeControlOptions: {
+				mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+			},		//mapTypeId: [google.maps.MapTypeId.ROADMAP, 'map_style'],
+			disableDefaultUI: true
 		};
 		map = new google.maps.Map($(config.container)[0], options);
 		geocoder = new google.maps.Geocoder();
-
+		map.mapTypes.set('map_style', styledMap);
+  		map.setMapTypeId('map_style');
 		if(config.contentString === null){
 			data = {};
 		}else{

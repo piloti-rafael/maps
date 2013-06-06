@@ -1,54 +1,33 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR">
 <head>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-	<script type="text/javascript" src="piloti-mapa.js"></script>
-
+	<script src="module.js"></script>
+	<script src="piloti.js"></script>
 	<script>
-		$(document).ready(function(){
-
-			/*$("#vamo").mapa({
-				containerSize: {
-					height: "400px",
-					width: "600px",
-					display: "block"
-				},
-				address: "Av. Venezuela",
-				number : "231",
-				city: "Rio de Janeiro",
-				region: 'BR',
-				contentString: null,
-			});*/
-
-			$("#mapa").mapa({
-				icon : "https://s3.amazonaws.com/zuera/marker_ico.png",
-				container : "#vamo",
-				containerSize: {
-					height: "400px",
-					width: "600px",
-					display: "block"
-				}
-			});
-
-			
+	$(document).ready(function(){
+		Piloti({
+			seletor : $("#vamo"),
+			mapa: true
 		});
+	});
+	
 	</script>
 </head>
 
 <body>
 
-	<select id="mapa">
-		<option value="">Selecione </option>
-		<option value="Av. Venezuela, 131, Rio de Janeiro, BR" data-description="Piloti Mobile Internet">Piloti</option>
-		<option value="Piazza del Colosseo, 1, 00184 Roma, Itália" data-description="Ola">Coliseu</option>
-		<option value="Rua Gavião Peixoto, 381, Niteroi, BR">Teste</option>
-	</select>
+		<select id="mapa">
+			<option value="">Selecione </option>
+			<option value="Av. Venezuela, 131, Rio de Janeiro, BR" data-description="Piloti Mobile Internet">Piloti</option>
+			<option value="Piazza del Colosseo, 1, 00184 Roma, Itália" data-description="Ola">Coliseu</option>
+			<option value="Rua Gavião Peixoto, 381, Niteroi, BR">Teste</option>
+		</select>
 
 
 	<div id="vamo" ></div>
 
-
 </body>
-
 </html>
+
