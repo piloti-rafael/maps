@@ -9,7 +9,9 @@
 	$(document).ready(function(){
 		Piloti({
 			seletor : $("#vamo"),
-			mapa: true
+			mapa: {
+				address: "Rua Belford Roxo, 285, Rio de janeiro, BR"
+			}
 		});
 	});
 	
@@ -18,16 +20,15 @@
 
 <body>
 
-		<select id="mapa">
+		<!-- <select id="mapa">
 			<option value="">Selecione </option>
 			<option value="Av. Venezuela, 131, Rio de Janeiro, BR" data-description="Piloti Mobile Internet">Piloti</option>
 			<option value="Piazza del Colosseo, 1, 00184 Roma, Itália" data-description="Ola">Coliseu</option>
 			<option value="Rua Gavião Peixoto, 381, Niteroi, BR">Teste</option>
-		</select>
+		</select> -->
 
 
 	<div id="vamo" ></div>
 
 </body>
 </html>
-

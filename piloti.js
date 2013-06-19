@@ -54,7 +54,8 @@ Module("Piloti", function(Piloti){
 		var options = {
 			zoom: 5,
 			center: latlng,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			disableDefaultUI: true
 		};
 		map = new google.maps.Map($(config.container)[0], options);
 		geocoder = new google.maps.Geocoder();
