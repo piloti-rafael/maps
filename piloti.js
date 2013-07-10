@@ -32,8 +32,8 @@ Module("Piloti", function(Piloti){
 				width: "600px",
 				display: "block"
 			},
-			address: "Av. Olegario Maciel",
-			number : "101",
+			address: "Avenida Venezuela",
+			number : "131",
 			city: "Rio de Janeiro",
 			region: 'BR',
 			contentString: null,
