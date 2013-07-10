@@ -32,16 +32,21 @@ Module("Piloti", function(Piloti){
 				width: "600px",
 				display: "block"
 			},
-			address: "Av. Venezuela",
-			number : "131",
+			address: "Av. Olegario Maciel",
+			number : "101",
 			city: "Rio de Janeiro",
 			region: 'BR',
 			contentString: null,
 			elementoNodeName: seletor[0].nodeName,
-			elementoDOM: seletor[0]
+			elementoDOM: seletor[0],
+			style : null
 		};
 
 		$.extend(true, config, settings);
+
+		var styledMap = new google.maps.StyledMapType(config.style,{name: "Styled Map"});
+
+
 
 		// seto o estilo css para o container
 
@@ -50,16 +55,17 @@ Module("Piloti", function(Piloti){
 		var map;
 		var marker;
 		var data;
-		var latlng = new google.maps.LatLng(-22.8800397, -43.15878999999999);
+		var latlng = new google.maps.LatLng(-23.013745, -43.305662);
 		var options = {
 			zoom: 5,
 			center: latlng,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			disableDefaultUI: true
+			disableDefaultUI: true,
+			scrollwheel: false
 		};
 		map = new google.maps.Map($(config.container)[0], options);
 		geocoder = new google.maps.Geocoder();
-
+		
 		if(config.contentString === null){
 			data = {};
 		}else{
@@ -78,6 +84,9 @@ Module("Piloti", function(Piloti){
 			shadow : config.shadow
 		});
 
+		map.mapTypes.set('map_style', styledMap);
+		map.setMapTypeId('map_style');
+//		map.disableScrollWheelZoom();
 		marker.setPosition(latlng);
 
 		if (config.elementoNodeName == "SELECT"){
